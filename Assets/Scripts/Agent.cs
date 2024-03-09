@@ -8,10 +8,13 @@ public class Agent : MonoBehaviour
 {
     [SerializeField, HideInInspector] NavMeshAgent navMeshAgent;
     [SerializeField] float startHealth = 100;
+	[SerializeField] int agentValue = 10;
+	[SerializeField] int agentDamage = 1;
 
-    float health;
+	float health;
 
-    public event Action HealthChanged;
+
+	public event Action HealthChanged;
 
     public float HealthRate
     {
@@ -26,7 +29,7 @@ public class Agent : MonoBehaviour
 
     void Start()
     {
-        EndPoint ep = FindObjectOfType<EndPoint>();
+		EndPoint ep = FindObjectOfType<EndPoint>();
         navMeshAgent.destination = ep.transform.position;
         HealthRate = 1;
         HealthChanged?.Invoke();
@@ -34,7 +37,8 @@ public class Agent : MonoBehaviour
 
     public void OnHitEndPoint()
     {
-        Destroy(gameObject);
+		GameManager.instance.Damage(agentDamage);
+		Destroy(gameObject);
     }
 
     public void Damage(float damage)
@@ -45,6 +49,7 @@ public class Agent : MonoBehaviour
 
         if (health <= 0)
         {
+			GameManager.instance.Money += agentValue;
             Destroy(gameObject);
         }
     }
