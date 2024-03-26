@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Agent : MonoBehaviour
@@ -12,7 +11,6 @@ public class Agent : MonoBehaviour
 	[SerializeField] int agentDamage = 1;
 
 	float health;
-
 
 	public event Action HealthChanged;
 

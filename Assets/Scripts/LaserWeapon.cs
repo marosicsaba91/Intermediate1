@@ -45,12 +45,14 @@ public class LaserWeapon : MonoBehaviour
 
         return closest;
     }
+
     bool IsInRange(Agent agent)
     {
         Vector3 p = transform.position;
         float distance = Vector3.Distance(agent.transform.position, p);
         return distance <= range;
 	}
+
 	void UpdateLaserVisual()
 	{
 		lineRenderer.enabled = closest != null;
