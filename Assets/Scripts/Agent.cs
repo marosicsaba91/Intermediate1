@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -10,9 +11,9 @@ public class Agent : MonoBehaviour
     [SerializeField] float startHealth = 100;
 	[SerializeField] int agentValue = 10;
 	[SerializeField] int agentDamage = 1;
+	[SerializeField] Elemental[] immunities;
 
 	float health;
-
 
 	public event Action HealthChanged;
 
@@ -39,11 +40,24 @@ public class Agent : MonoBehaviour
     {
 		GameManager.instance.Damage(agentDamage);
 		Destroy(gameObject);
-    }
+	}
 
-    public void Damage(float damage)
-    {
-        health -= damage;
+	/*
+	public void Damage(float damage, string elemental) 
+	{
+		if (!immunities.Contains(elemental))
+			Damage(damage);
+	}
+	*/
+
+	public void Damage(float damage, Elemental elemental = null)
+	{
+		if (elemental != null && immunities.Contains(elemental)) 
+		{
+			damage *= elemental.multiplier;
+		}
+
+		health -= damage;
 
         HealthChanged?.Invoke();
 
@@ -53,4 +67,6 @@ public class Agent : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+	public bool IsImmune(Elemental elemental) => immunities.Contains(elemental);
 }
