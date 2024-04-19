@@ -85,6 +85,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4530463197215738747}
   m_SourcePrefab: {fileID: 100100000, guid: 7fad0876753b9f74fb22d3dfbb7945f6, type: 3}
+--- !u!114 &936776563769955435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1047583379301531951, guid: 7fad0876753b9f74fb22d3dfbb7945f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 254975484678657348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3490682071983073713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7844cefa948cdc4c85a2a2bb2820f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3490682071983073713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3744952013118799093, guid: 7fad0876753b9f74fb22d3dfbb7945f6,
@@ -103,19 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51f964fda331b241b046fc2d4d3ce09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetProvider: {fileID: 7156962139334099012}
+  targetProvider: {fileID: 936776563769955435}
   fireRate: 1
   projectilePrefab: {fileID: 8411453221864579307, guid: 93cb4396f4038ef4da84953499af0dc9,
     type: 3}
---- !u!114 &7156962139334099012 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6979306186740438272, guid: 7fad0876753b9f74fb22d3dfbb7945f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 254975484678657348}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3490682071983073713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7844cefa948cdc4c85a2a2bb2820f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

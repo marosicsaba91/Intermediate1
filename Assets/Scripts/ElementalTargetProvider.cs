@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ElementalTargetProvider : TargetP
+public class ElementalTargetProvider : TargetProvider
 {
 	[SerializeField] Elemental elemental;
 

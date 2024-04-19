@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,7 +59,7 @@ public class PathWalker : MonoBehaviour
 
 		if (isLooping && points.Length >= 3)
 		{
-			Gizmos.DrawLine(GetPoint(0), GetPoint (points.Length - 1));
+			Gizmos.DrawLine(GetPoint(0), GetPoint(points.Length - 1));
 		}
 	}
 }

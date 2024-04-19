@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +18,7 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {        
-        transform.LookAt(Camera.main.transform.position);
+        transform.LookAt(Camera.main.transform);
     }
 
     void OnHealthChanged() => UpdateUI(agent.HealthRate);

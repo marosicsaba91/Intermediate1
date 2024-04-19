@@ -127,6 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 9014662081778910358}
   startHealth: 100
+  agentValue: 10
+  agentDamage: 1
+  immunities: []
 --- !u!195 &9014662081778910358
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,7 +150,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!33 &261600762976323710
 MeshFilter:

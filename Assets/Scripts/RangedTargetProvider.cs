@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class RangedTargetProvider : TargetP
+public class RangedTargetProvider : TargetProvider
 {
 	[SerializeField] float range = 2;
 

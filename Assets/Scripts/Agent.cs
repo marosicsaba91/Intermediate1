@@ -41,14 +41,6 @@ public class Agent : MonoBehaviour
 		Destroy(gameObject);
 	}
 
-	/*
-	public void Damage(float damage, string elemental) 
-	{
-		if (!immunities.Contains(elemental))
-			Damage(damage);
-	}
-	*/
-
 	public void Damage(float damage, Elemental elemental = null)
 	{
 		if (elemental != null && immunities.Contains(elemental)) 

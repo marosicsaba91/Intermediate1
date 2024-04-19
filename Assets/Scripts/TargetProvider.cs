@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class TargetP : MonoBehaviour 
+public abstract class TargetProvider : MonoBehaviour 
 {
 	public abstract Agent GetTarget();
 }

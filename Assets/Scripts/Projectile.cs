@@ -1,8 +1,9 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-
 	[SerializeField] float damage = 10;
 	[SerializeField] float speed = 10;
 	[SerializeField] Elemental elemental;
@@ -10,9 +11,9 @@ public class Projectile : MonoBehaviour
 	Agent target;
 
 	public void Setup(Agent target)
-    {
+	{
 		this.target = target;
-    }
+	}
 
 	void Update()
 	{
@@ -26,7 +27,7 @@ public class Projectile : MonoBehaviour
 		transform.position = Vector3.MoveTowards(
 			transform.position, tp, speed * Time.deltaTime);
 
-		if (transform.position == tp) 
+		if (transform.position == tp)
 		{
 			target.Damage(damage, elemental);
 			Destroy(gameObject);
