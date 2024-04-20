@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,12 +12,29 @@ public class Agent : MonoBehaviour
 	[SerializeField] int agentValue = 10;
 	[SerializeField] int agentDamage = 1;
 	[SerializeField] Elemental[] immunities;
+	[SerializeField] Vector3 localAimingPoint;
+
+	static List<Agent> agents = new ();
+	public static IReadOnlyList<Agent> Agents => agents;
+
+	void OnEnable() => agents.Add(this);
+	void OnDisable() => agents.Remove(this);
+
+
 
 	float health;
 
 	public event Action HealthChanged;
 
-    public float HealthRate
+	public Vector3 AimingPoint => transform.TransformPoint(localAimingPoint);
+
+	void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(AimingPoint, 0.15f);		
+	}
+
+	public float HealthRate
     {
         get => health / startHealth;
         private set => health = value * startHealth;

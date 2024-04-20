@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5368698185595078229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6722185312299463702, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_Name
+      value: Tower Big MachineGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530863351449970712, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6306080109057395955, guid: 234a417f52487a945bd88aa17c936bd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5451219728326615039}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 234a417f52487a945bd88aa17c936bd3, type: 3}
+--- !u!4 &2090445368220715686 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6306080109057395955, guid: 234a417f52487a945bd88aa17c936bd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5368698185595078229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7465473882651111023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2090445368220715686}
+    m_Modifications:
+    - target: {fileID: 3187474894428467600, guid: 9e3c604312449e54fae54bd23a126f81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187474894428467600, guid: 9e3c604312449e54fae54bd23a126f81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187474894428467600, guid: 9e3c604312449e54fae54bd23a126f81,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835729673722952105, guid: 9e3c604312449e54fae54bd23a126f81,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon MachineGun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e3c604312449e54fae54bd23a126f81, type: 3}
+--- !u!4 &5451219728326615039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3187474894428467600, guid: 9e3c604312449e54fae54bd23a126f81,
+    type: 3}
+  m_PrefabInstance: {fileID: 7465473882651111023}
+  m_PrefabAsset: {fileID: 0}

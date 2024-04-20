@@ -28,7 +28,7 @@ public class RangedTargetProvider : TargetProvider
 
 		foreach (Agent agent in allAgents)
 		{
-			float distance = Vector3.Distance(agent.transform.position, p);
+			float distance = Vector3.Distance(agent.AimingPoint, p);
 			if (distance > range) continue;
 			if (distance > minDistance) continue;
 
@@ -42,7 +42,7 @@ public class RangedTargetProvider : TargetProvider
 	bool IsInRange(Agent agent)
 	{
 		Vector3 p = transform.position;
-		float distance = Vector3.Distance(agent.transform.position, p);
+		float distance = Vector3.Distance(agent.AimingPoint, p);
 		return distance <= range;
 	}
 
@@ -51,6 +51,6 @@ public class RangedTargetProvider : TargetProvider
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, range);
 		if (target != null)
-			Gizmos.DrawLine(target.transform.position, transform.position);
+			Gizmos.DrawLine(target.AimingPoint, transform.position);
 	}
 }

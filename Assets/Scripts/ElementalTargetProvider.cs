@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class ElementalTargetProvider : TargetProvider
@@ -6,7 +7,7 @@ public class ElementalTargetProvider : TargetProvider
 
 	public override Agent GetTarget() 
 	{
-		foreach (Agent agent in FindObjectsOfType<Agent>())
+		foreach (Agent agent in Agent.Agents)
 		{
 			if (!agent.IsImmune(elemental))
 				return agent;

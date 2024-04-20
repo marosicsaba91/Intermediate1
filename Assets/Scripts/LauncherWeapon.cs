@@ -6,9 +6,8 @@ public class LauncherWeapon : PeriodicWeapon
 
 	protected override void Fire() 
 	{
-		Projectile p = 
-			Instantiate(projectilePrefab, transform.position, Quaternion.identity, transform);
+		Projectile p = Instantiate(projectilePrefab, transform);
 
-		p.Setup(Target);
+		p.Setup(this);
 	}
 }

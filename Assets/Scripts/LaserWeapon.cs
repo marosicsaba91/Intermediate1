@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class LaserWeapon : MonoBehaviour
+public class LaserWeapon : Weapon
 {
     [SerializeField] float range = 2;
     [SerializeField] float damageRate = 10;
@@ -11,47 +10,13 @@ public class LaserWeapon : MonoBehaviour
 
     Agent closest = null;
 
-    void Update()
+	protected override void ChildUpdate()
     {
-        if (closest != null && !IsInRange(closest))
-            closest = null;
-
-        if (closest == null)
-            closest = FindClosestAgentInRange();
-
         if (closest != null)
             closest.Damage(damageRate * Time.deltaTime);
 
 		UpdateLaserVisual();
     }
-
-    Agent FindClosestAgentInRange()
-    {
-        Agent[] allAgents = FindObjectsOfType<Agent>();
-
-        Vector3 p = transform.position;
-        float minDistance = float.MaxValue;
-        Agent closest = null;
-
-        foreach (Agent agent in allAgents)
-        {
-            float distance = Vector3.Distance(agent.transform.position, p);
-            if (distance > range) continue;
-            if (distance > minDistance) continue;
-
-            minDistance = distance;
-            closest = agent;
-        }
-
-        return closest;
-    }
-
-    bool IsInRange(Agent agent)
-    {
-        Vector3 p = transform.position;
-        float distance = Vector3.Distance(agent.transform.position, p);
-        return distance <= range;
-	}
 
 	void UpdateLaserVisual()
 	{
@@ -60,7 +25,7 @@ public class LaserWeapon : MonoBehaviour
 
 		lineRenderer.positionCount = laserPointCount;
 		Vector3 a = transform.position;
-		Vector3 b = closest.transform.position;
+		Vector3 b = closest.AimingPoint;
 		Vector3 step = (b - a) / (laserPointCount - 1);
 
 		for (int i = 0; i < laserPointCount; i++)
@@ -69,12 +34,4 @@ public class LaserWeapon : MonoBehaviour
 			a += step;
 		}
 	}
-
-	void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
-        if (closest != null)
-            Gizmos.DrawLine(closest.transform.position, transform.position);
-    }
 }
