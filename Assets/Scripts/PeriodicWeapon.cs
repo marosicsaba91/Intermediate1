@@ -7,11 +7,13 @@ public abstract class PeriodicWeapon : Weapon
 	float lastFireTime;
 	protected override void ChildUpdate() 
 	{
-		if (Target == null) return;
+		if (Target != null) return;
 
 		if (Time.time - lastFireTime >= (1 / fireRate))
 		{
 			Fire();
+			PlayEffect(WeaponEvent.Shoot);
+
 			lastFireTime = Time.time;
 		}
 	}

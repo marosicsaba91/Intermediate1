@@ -10,5 +10,12 @@ public abstract class Weapon : MonoBehaviour
 		ChildUpdate();
 	}
 
+	public void PlayEffect(WeaponEvent weaponEvent)
+	{
+		IWeaponEffect[] allEffectPlayer = GetComponentsInChildren<IWeaponEffect>();
+		foreach (IWeaponEffect player in allEffectPlayer)
+			player.PlayEffect(weaponEvent);
+	}
+
 	protected virtual void ChildUpdate() { }
 }
