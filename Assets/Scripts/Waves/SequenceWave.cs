@@ -19,7 +19,8 @@ public class SequenceWave : Wave
 		foreach (DelayedSpawn spawn in spawns)
 		{
 			yield return new WaitForSeconds(spawn.delay);
-			Instantiate(spawn.prefab, tower.position, tower.rotation, tower);
+			// Instantiate(spawn.prefab, tower.position, tower.rotation, tower);
+			Pool.Pop(spawn.prefab, tower.position, tower.rotation, tower);
 		}
 	}
 }

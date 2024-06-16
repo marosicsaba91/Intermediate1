@@ -31,58 +31,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3835729673722952105, guid: 9e3c604312449e54fae54bd23a126f81,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2355605312695122790}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3c604312449e54fae54bd23a126f81, type: 3}
---- !u!114 &2345842760112643528 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7572598185615564921, guid: 9e3c604312449e54fae54bd23a126f81,
-    type: 3}
-  m_PrefabInstance: {fileID: 5303373811457834417}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8980848027814315032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7844cefa948cdc4c85a2a2bb2820f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7324385598489218081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3187474894428467600, guid: 9e3c604312449e54fae54bd23a126f81,
     type: 3}
   m_PrefabInstance: {fileID: 5303373811457834417}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8300554702392066398 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4226664414009015535, guid: 9e3c604312449e54fae54bd23a126f81,
-    type: 3}
-  m_PrefabInstance: {fileID: 5303373811457834417}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8980848027814315032 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3835729673722952105, guid: 9e3c604312449e54fae54bd23a126f81,
-    type: 3}
-  m_PrefabInstance: {fileID: 5303373811457834417}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2355605312695122790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8980848027814315032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26e77ecc77c71649a738090657541bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalRotatable: {fileID: 8300554702392066398}
-  horizontalRotatable: {fileID: 7324385598489218081}
-  localStartPoint: {x: 0, y: 0, z: 0}
-  targetProvider: {fileID: 2345842760112643528}
 --- !u!1001 &7189959751449572600
 PrefabInstance:
   m_ObjectHideFlags: 0

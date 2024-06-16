@@ -3,7 +3,13 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
 	[SerializeField] TargetProvider targetProvider;
-	protected Agent Target => targetProvider.GetTarget();
+	protected Agent Target
+	{
+		get
+		{
+			return targetProvider.GetTarget();
+		}
+	}
 
 	void Update()
 	{

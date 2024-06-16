@@ -14,7 +14,9 @@ public class AgentWave : Wave
 		for (int i = 0; i < count; i++)
 		{
 			yield return new WaitForSeconds(delay);
-			Instantiate(agentPrefabs, tower.position, tower.rotation, tower);
+			// Instantiate(agentPrefabs, tower.position, tower.rotation, tower);
+			Pool.Pop(agentPrefabs, tower.position, tower.rotation, tower);
+
 		}
 	}
 }

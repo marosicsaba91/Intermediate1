@@ -6,6 +6,7 @@ public class AutoDamageWeapon : PeriodicWeapon
 
 	protected override void Fire()
 	{
-		Target.Damage(damage);
+		if(Target != null)
+			Target.Damage(damage);
 	}
 }

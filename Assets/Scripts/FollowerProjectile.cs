@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class FollowerProjectile : Projectile
+public class FollowerProjectile : Projectile, IPoolable
 {
 	[SerializeField] float damage = 10;
 	[SerializeField] float speed = 10;
 	[SerializeField] Elemental elemental;
 
 	Agent target;
+
+	public GameObject Prefab { get; set; }
 
 	public override void Setup(LauncherWeapon launcher)
 	{
@@ -19,7 +21,7 @@ public class FollowerProjectile : Projectile
 	{
 		if (target == null)
 		{
-			Destroy(gameObject);
+			Pool.Push(Prefab, gameObject);
 			return;
 		}
 
@@ -30,7 +32,7 @@ public class FollowerProjectile : Projectile
 		if (transform.position == tp)
 		{
 			target.Damage(damage, elemental);
-			Destroy(gameObject);
+			Pool.Push(Prefab, gameObject);
 		}
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class Agent : MonoBehaviour
+public class Agent : MonoBehaviour, IPoolable
 {
     [SerializeField, HideInInspector] NavMeshAgent navMeshAgent;
     [SerializeField] float startHealth = 100;
@@ -39,8 +39,9 @@ public class Agent : MonoBehaviour
         get => health / startHealth;
         private set => health = value * startHealth;
     }
-    
-    void OnValidate()
+	public GameObject Prefab { get; set; }
+
+	void OnValidate()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
@@ -56,6 +57,7 @@ public class Agent : MonoBehaviour
     public void OnHitEndPoint()
     {
 		GameManager.instance.Damage(agentDamage);
+		Pool.Push(Prefab, gameObject);
 		Destroy(gameObject);
 	}
 
@@ -73,7 +75,7 @@ public class Agent : MonoBehaviour
         if (health <= 0)
         {
 			GameManager.instance.Money += agentValue;
-            Destroy(gameObject);
+		Pool.Push(Prefab, gameObject);
         }
     }
 
