@@ -34,6 +34,7 @@ public class CameraController : MonoBehaviour
 		HandleTarget();
 		UpdateCamera(targetPoint);
 	}
+
 	void HandleInput()
 	{
 		float inputX = Input.GetAxis("Mouse X");

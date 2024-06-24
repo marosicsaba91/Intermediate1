@@ -8,6 +8,7 @@ public class BallisticProjectile : Projectile
 	{
 		Aimer aimer = launcher.GetComponent<Aimer>();
 		TargetProvider tp = launcher.GetComponent<TargetProvider>();
+
 		Vector3 velocity = aimer.GetDirection(tp.GetTarget());
 		rigidBody.velocity = velocity;
 		rigidBody.rotation = Quaternion.LookRotation(velocity);

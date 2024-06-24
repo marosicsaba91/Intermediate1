@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 5956486858340319681}
-  range: 2
   damageRate: 5
   lineRenderer: {fileID: 1586536590865257475}
   laserPointCount: 10
@@ -269,4 +268,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7844cefa948cdc4c85a2a2bb2820f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 4

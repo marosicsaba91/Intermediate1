@@ -5,9 +5,9 @@ public abstract class PeriodicWeapon : Weapon
 	[SerializeField] float fireRate = 1;
 
 	float lastFireTime;
-	protected override void ChildUpdate() 
+	protected virtual void Update() 
 	{
-		if (Target != null) return;
+		if (Target == null) return;
 
 		if (Time.time - lastFireTime >= (1 / fireRate))
 		{

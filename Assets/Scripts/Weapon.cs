@@ -3,18 +3,8 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
 	[SerializeField] TargetProvider targetProvider;
-	protected Agent Target
-	{
-		get
-		{
-			return targetProvider.GetTarget();
-		}
-	}
 
-	void Update()
-	{
-		ChildUpdate();
-	}
+	protected Agent Target => targetProvider.GetTarget();
 
 	public void PlayEffect(WeaponEvent weaponEvent)
 	{
@@ -22,6 +12,4 @@ public abstract class Weapon : MonoBehaviour
 		foreach (IWeaponEffect player in allEffectPlayer)
 			player.PlayEffect(weaponEvent);
 	}
-
-	protected virtual void ChildUpdate() { }
 }

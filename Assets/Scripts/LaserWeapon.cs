@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LaserWeapon : Weapon
 {
-    [SerializeField] float range = 2;
     [SerializeField] float damageRate = 10;
 
 	[SerializeField] LineRenderer lineRenderer;
@@ -10,8 +9,8 @@ public class LaserWeapon : Weapon
 
     Agent closest = null;
 
-	protected override void ChildUpdate()
-    {
+	protected virtual void Update()
+	{
         if (closest != null)
             closest.Damage(damageRate * Time.deltaTime);
 

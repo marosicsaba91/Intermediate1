@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic; 
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 interface IPoolable
@@ -7,16 +7,10 @@ interface IPoolable
 }
 
 
-class Pool : MonoBehaviour
+static class Pool
 {
-	static Pool instance;
+	static Dictionary<GameObject, Stack<GameObject>> sleepers = new();
 
-	Dictionary<GameObject, Stack<GameObject>> sleepers = new();
-
-	void Awake()
-	{
-		instance = this;
-	}
 	public static GameObject Pop(GameObject prefab, Transform parent)
 	{
 		GameObject poppedObject = Pop(prefab);
@@ -32,12 +26,12 @@ class Pool : MonoBehaviour
 		return poppedObject;
 	}
 
-	public static GameObject Pop(GameObject prefab) 
+	public static GameObject Pop(GameObject prefab)
 	{
 		Stack<GameObject> stack;
-		if (!instance.sleepers.TryGetValue(prefab, out stack) || stack.Count == 0)
+		if (!sleepers.TryGetValue(prefab, out stack) || stack.Count == 0)
 		{
-			GameObject newGo = Instantiate(prefab);
+			GameObject newGo = Object.Instantiate(prefab);
 			foreach (IPoolable poolable in newGo.GetComponents<IPoolable>())
 				poolable.Prefab = prefab;
 
@@ -50,13 +44,12 @@ class Pool : MonoBehaviour
 	public static void Push(GameObject prefab, GameObject item)
 	{
 		Stack<GameObject> stack;
-		if (!instance.sleepers.TryGetValue(prefab, out stack))
+		if (!sleepers.TryGetValue(prefab, out stack))
 		{
 			stack = new Stack<GameObject>();
-			instance.sleepers.Add(prefab, stack);
+			sleepers.Add(prefab, stack);
 		}
 
 		stack.Push(item);
 	}
-
 }
